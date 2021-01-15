@@ -1,0 +1,263 @@
+<html>
+    <head>
+        <title>Blockchain graph - Realtime</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.js" integrity="sha512-9rxMbTkN9JcgG5euudGbdIbhFZ7KGyAuVomdQDI9qXfPply9BJh0iqA7E/moLCatH2JD4xBGHwV6ezBkCpnjRQ==" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css" integrity="sha512-V0+DPzYyLzIiMiWCg3nNdY+NyIiK9bED/T1xNBj08CaIUyK3sXRpB26OUCIzujMevxY9TRJFHQIxTwgzb0jVLg==" crossorigin="anonymous" />
+    </head>
+    <body>
+        <div class="navbar">
+            <p class="titleHeaderNavbar">Proof of concept</p>
+        </div>
+     
+        <div class="mainContainer">
+            <div class="newsContainer">
+                <div >
+                    <h1 class="bitcoinLabel">Fruit Storage <span class="smallerText"></span></h1>
+    
+                    <div class="foodContainer">
+                        <div class="fruitSection">
+                            <div class="fruitImageAndText">
+                                <img class="fruitImage" src="data/apple.png"/>
+                                <p>Apple ($1,5)</p>
+                            </div>
+                            
+                            <input id="apple" class="numberInput" type="number" onkeypress="return event.charCode >= 48" placeholder="0" min="1"/>
+    
+                        </div>
+                        <div class="fruitSection">
+                            <div class="fruitImageAndText">
+                                <img class="fruitImage" src="data/melon.png"/>
+                                <p>Melon  ($2)</p>
+                            </div>                        
+                            <input id="melon" class="numberInput" type="number" onkeypress="return event.charCode >= 48" placeholder="0" min="1"/>
+    
+                        </div>
+                        <div class="fruitSection">
+                            <div class="fruitImageAndText">
+                                <img class="fruitImage" src="data/orange.jpg"/>
+                                <p>Orange ($1,25)</p>
+                            </div>                          
+                            <input id="orange" class="numberInput" type="number" onkeypress="return event.charCode >= 48" placeholder="0" min="1"/>
+    
+                        </div>
+                        <div class="fruitSection">
+                            <div class="fruitImageAndText">
+                                <img class="fruitImage" src="data/peach.jpg"/>
+                                <p>Peach ($2,5)</p>
+                            </div>
+                            
+                            <input id="peach" class="numberInput" type="number" onkeypress="return event.charCode >= 48" placeholder="0" min="1"/>
+    
+                        </div>
+                        <div class="fruitSection">
+                            <div class="fruitImageAndText">
+                                <img class="fruitImage" src="data/grape.png"/>
+                                <p>Grape  ($2,2)</p>
+                            </div>                        
+                            <input id="grape" class="numberInput" type="number" onkeypress="return event.charCode >= 48" placeholder="0" min="1"/>
+    
+                        </div>
+                        <div class="fruitSection">
+                            <div class="fruitImageAndText">
+                                <img class="fruitImage" src="data/orange.jpg"/>
+                                <p>Pear ($3,25)</p>
+                            </div>                          
+                            <input id="pear" class="numberInput" type="number" onkeypress="return event.charCode >= 48" placeholder="0" min="1"/>
+    
+                        </div>
+                        <button class="buyButton" onclick="buyFruits()">Buy</button>
+                    </div>
+                   
+            </div>
+            <p>This project is a simple proof of concept, using Chartist JS and javascript Events to build a simple realtime dashboard.
+                 You can find more projects at <a href="https://github.com/AlexandreUser">AlexandreUser</a>
+            </p>
+            </div>
+          
+            <div class="contentContainer">
+                <h1 class="bitcoinLabel">Realtime Dashboard <span class="smallerText"></span></h1>
+                <div class="bitcoinDetails">
+                    <div class="bitcoinSection">
+                        <p style="margin-bottom: 0px;" class="smallerText">Total Sales</p>
+                        <p   id="allPrice" class="bitcoinCategory">$0 </p>
+                    </div>
+                    <div class="bitcoinSection">
+                        <p style="margin-bottom: 0px;" class="smallerText">N# of orders</p>
+                        <p   id="totalSales" class="bitcoinCategory positive">0</p>
+                    </div>
+                    <div class="bitcoinSection">
+                        <p style="margin-bottom: 0px;" class="smallerText">Last order</p>
+                        <p id="lastSales" class="bitcoinCategory">$0</p>
+                    </div>
+                    <div class="bitcoinSection">
+                        <p style="margin-bottom: 0px;" class="smallerText">Avg order</p>
+                        <p id="avgSales" class="bitcoinCategory">$0</p>
+                    </div>
+                </div>
+                <div class="bitcoinGraph" id="my-chart"></div>
+                <div class="aboutBitcoin">
+                    <h2 class="aboutBitcoinH2">About Realtime</h2>
+                    <div class="line"></div>
+                    <p class="bitcoinParagraph">Real-time or real time describes various operations in computing or other processes that must guarantee response times within a specified time (deadline), usually a relatively short time. A real-time process is generally one that happens in defined time steps of maximum duration and fast enough to affect the environment in which it occurs, such as inputs to a computing system.    
+
+                    </p> 
+                </div>
+                 </div>
+                </div>
+        <div class="footer">
+            <p class="copyRightText">Copyright @ Alexandre Vieira 2021</p>
+        </div>
+
+    </body>
+    <script src="src/chart.js"></script>
+    <script src="src/update.js"></script>
+    <style>
+        .buyButton{
+            margin: 0 auto;
+            width: 80px;
+            margin-left: calc(50% - 40px);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .fruitImageAndText{
+            display: flex;
+        }
+        .fruitImage{
+            width: 50px;
+            height: 50px;
+        }
+        .numberInput{
+            border-radius: 10px;
+            border: 1px solid #161f36;
+
+        }
+        .fruitSection{
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .foodContainer{
+            min-height: 20vh;
+            margin-right: 20px;
+            border-radius: 5px;
+            border: 1px solid #161f36;
+        }
+        .copyRightText{
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            padding-top: 20px;
+        }
+        .titleHeaderNavbar{
+            color: white;
+            font-weight: bold;
+            font-size: 26px;
+            padding-top: 40px;
+            margin-left: 30px;
+        }
+        body{
+            margin: 0px;
+            display: block;
+        }
+        .navbar{
+            width: 100%;
+            min-height: 12vh;
+            background-color: #161f36
+        }
+        .footer{
+            width: 100%;
+            min-height: 6vh;
+            background-color: #161f36
+        }
+        .newsTitle{
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .newsImage{
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        .newsHeader{
+            margin-top: 80px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .newsContainer{
+            width: 48%;
+            margin-left: 20px;     
+        }
+        .contentContainer{
+            width: 50%;
+        }
+        .line{
+            width: 100%;
+            min-height: 2px;
+            background-color: #161f36;
+        }
+        .aboutBitcoinH2{
+            margin-left: 35px;
+            color: #161f36;
+        }
+        .bitcoinParagraph{
+            font-weight: 200;
+            width: 90%;
+            margin:0 auto;
+            margin-bottom:20px;
+            margin-top: 10px;
+        }
+        .aboutBitcoin{
+            width: 100%;
+            border: 1px solid #161f36;
+            border-radius: 5px;
+        }
+        .aboutBitcoinProject{
+            width: 80%;
+            border: 1px solid #161f36;
+            border-radius: 5px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .positive{
+            color: green!important;
+        }
+        .bitcoinSection{
+            display: block;
+        }
+        .bitcoinCategory{
+            color: #161f36;
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 5px;
+        }
+        .bitcoinDetails{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            min-height: 10vh;
+            border-radius: 5px;
+            border: 1px solid #161f36;
+            margin-bottom: 20px;
+        }
+        .mainContainer{
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            min-height: 80vh;
+            margin-bottom: 50px;
+        }
+        .smallerText{
+            font-size: 14px;
+            color: gray;
+        }
+        .bitcoinLabel{
+            color: #161f36;
+        }
+        .bitcoinGraph{
+            width: 100%;
+            height: 40vh;
+        }
+    </style>
+</html>
