@@ -69,9 +69,8 @@
                     </div>
                    
             </div>
-            <p>This project is a simple proof of concept, using Chartist JS and javascript Events to build a simple realtime dashboard.
-                 You can find more projects at <a href="https://github.com/AlexandreUser">AlexandreUser</a>
-            </p>
+          
+         
             </div>
           
             <div class="contentContainer">
@@ -95,15 +94,25 @@
                     </div>
                 </div>
                 <div class="bitcoinGraph" id="my-chart"></div>
-                <div class="aboutBitcoin">
-                    <h2 class="aboutBitcoinH2">About Realtime</h2>
-                    <div class="line"></div>
-                    <p class="bitcoinParagraph">Real-time or real time describes various operations in computing or other processes that must guarantee response times within a specified time (deadline), usually a relatively short time. A real-time process is generally one that happens in defined time steps of maximum duration and fast enough to affect the environment in which it occurs, such as inputs to a computing system.    
-
-                    </p> 
-                </div>
+                
                  </div>
                 </div>
+        <div class="mainContainer" style="justify-content: space-evenly;min-height: 20vh;" >
+            <div class="aboutBitcoin" style="width: 48%;">
+                <h2 class="aboutBitcoinH2">About this project</h2>
+                <div class="line"></div>
+                <p class="bitcoinParagraph">This project is a simple proof of concept, using Chartist JS and javascript Events to build a simple realtime dashboard.
+                    You can find more projects at <a href="https://github.com/AlexandreUser">AlexandreUser</a>
+                </p> 
+            </div>
+            <div class="aboutBitcoin" style="width: 48%;">
+                <h2 class="aboutBitcoinH2">About Realtime</h2>
+                <div class="line"></div>
+                <p class="bitcoinParagraph">Real-time or real time describes various operations in computing or other processes that must guarantee response times within a specified time (deadline), usually a relatively short time. A real-time process is generally one that happens in defined time steps of maximum duration and fast enough to affect the environment in which it occurs, such as inputs to a computing system.    
+
+                </p> 
+            </div>
+        </div>
         <div class="footer">
             <p class="copyRightText">Copyright @ Alexandre Vieira 2021</p>
         </div>
@@ -142,6 +151,13 @@
             min-height: 20vh;
             margin-right: 20px;
             border-radius: 5px;
+            border: 1px solid #161f36;
+        }
+        .aboutContainer{
+            min-height: 18vh;
+            margin-right: 20px;
+            border-radius: 5px;
+            margin-top:69px;
             border: 1px solid #161f36;
         }
         .copyRightText{
@@ -245,7 +261,6 @@
             display: flex;
             width: 80%;
             margin: 0 auto;
-            min-height: 80vh;
             margin-bottom: 50px;
         }
         .smallerText{
@@ -273,6 +288,13 @@
             }
             .foodContainer{
                 margin-right: 0px;
+            }
+            .aboutContainer{
+                margin-right: 0px;
+            }
+            .aboutBitcoin{
+                width: 100%!important;
+                margin-top: 20px;
             }
         
         } 
